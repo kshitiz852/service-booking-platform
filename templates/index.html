@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Professional Home Services</h1>
+    <p>Fast • Reliable • Affordable</p>
+    <a href="/services" class="hero-btn">Book a Service</a>
+  </div>
+</section>
+
+
+
+<!-- TRUST STATS -->
+<section class="stats">
+  <div class="stat">
+    <h2>500+</h2>
+    <p>Happy Customers</p>
+  </div>
+  <div class="stat">
+    <h2>50+</h2>
+    <p>Experts</p>
+  </div>
+  <div class="stat">
+    <h2>24/7</h2>
+    <p>Support</p>
+  </div>
+</section>
+
+<!-- SERVICES PREVIEW -->
+<section class="popular-section">
+  <h2 class="section-title">Popular Services</h2>
+
+  <div class="popular-grid">
+
+    <div class="popular-card">
+      <img src="{{ url_for('static', filename='images/ac.jpg') }}">
+      <h3>AC Repair & Installation</h3>
+      <p>Fast cooling solutions at your doorstep.</p>
+      <a href="/services" class="card-btn">Book Now</a>
+    </div>
+
+    <div class="popular-card">
+      <img src="{{ url_for('static', filename='images/plumbing.jpg') }}">
+      <h3>Plumbing Services</h3>
+      <p>Leak fixing, taps & bathroom work.</p>
+      <a href="/services" class="card-btn">Book Now</a>
+    </div>
+
+    <div class="popular-card">
+      <img src="{{ url_for('static', filename='images/electric.jpg') }}">
+      <h3>Electrician</h3>
+      <p>Safe wiring & electrical repairs.</p>
+      <a href="/services" class="card-btn">Book Now</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ABOUT PREVIEW -->
+<section class="about-preview">
+  <div class="about-img">
+    <img src="{{ url_for('static', filename='images/team.jpg') }}">
+  </div>
+  <div class="about-text">
+    <h2>Why Victor Ji?</h2>
+    <p>We connect you with trusted professionals to make your life easier. Quality work, transparent pricing and quick response.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <h2>What Clients Say</h2>
+  <p>"Victor Ji helped my shop grow 2x"</p>
+  <p>"Best service in town"</p>
+</section>
+
+{% endblock %}

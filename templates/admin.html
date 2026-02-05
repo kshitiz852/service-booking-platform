@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="admin-section">
+
+  <h2 class="admin-title">Admin Dashboard</h2>
+
+  <!-- STATS -->
+  <div class="stats-box">
+
+    <div class="stat-card pending">
+      <h3>{{ pending }}</h3>
+      <p>Pending Jobs</p>
+    </div>
+
+    <div class="stat-card done">
+      <h3>{{ done }}</h3>
+      <p>Completed Jobs</p>
+    </div>
+
+  </div>
+
+  <!-- BOOKINGS TABLE -->
+  <div class="admin-block">
+    <h3>Service Bookings</h3>
+
+    <div class="table-wrapper">
+      <table class="admin-table">
+
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Service</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        {% for b in bookings %}
+          <tr>
+            <td>{{ b.name }}</td>
+            <td>{{ b.phone }}</td>
+            <td>{{ b.address }}</td>
+            <td>{{ b.service }}</td>
+            <td>₹{{ b.price }}</td>
+
+            <td>
+              <span class="status {{ b.status|lower }}">
+                {{ b.status }}
+              </span>
+            </td>
+
+            <td>
+              {% if b.status == "Pending" %}
+                <a href="/complete/{{ b.id }}" class="done-btn">Done</a>
+              {% else %}
+                ✔
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+
+  <!-- CONTACT TABLE -->
+  <div class="admin-block">
+    <h3>Contact Messages</h3>
+
+    <div class="table-wrapper">
+      <table class="admin-table">
+
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        {% for l in leads %}
+          <tr>
+            <td>{{ l.name }}</td>
+            <td>{{ l.email }}</td>
+            <td>{{ l.message }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+
+</section>
+
+{% endblock %}

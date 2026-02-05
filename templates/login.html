@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="login-section">
+
+  <div class="login-card">
+
+    <h2>Welcome Back 👋</h2>
+    <p class="login-sub">Login to continue</p>
+
+    <form method="POST" class="login-form">
+
+      <input type="text" name="username" placeholder="Username" required>
+
+      <input type="password" name="password" placeholder="Password" required>
+
+      <button type="submit">Login</button>
+       <!-- <a href="/google-login" class="google-btn"> -->
+ <!-- Continue with Google -->
+</a>
+
+    </form>
+    
+    <p class="login-bottom">
+      Don’t have an account?
+      <a href="/signup">Sign Up</a>
+    </p>
+
+  </div>
+
+</section>
+
+{% endblock %}

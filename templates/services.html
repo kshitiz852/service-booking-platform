@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="services-hero">
+  <h2>Our Services</h2>
+  <p>Choose the service you need & book instantly</p>
+</section>
+
+<section class="services-grid">
+
+  {% for s in services %}
+
+  <div class="service-card">
+
+    <img src="{{ url_for('static', filename='images/' + s.img) }}" alt="{{ s.name }}">
+
+    <h3>{{ s.name }}</h3>
+
+    <p class="service-desc">
+      Quality professional service at your doorstep.
+    </p>
+
+    <p class="price">₹{{ s.price }}</p>
+
+    <a href="/book/{{ s.name }}/{{ s.price }}" class="book-btn">
+      Book Now
+    </a>
+
+  </div>
+
+  {% endfor %}
+
+</section>
+
+{% endblock %}

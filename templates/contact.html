@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="contact-section">
+
+  <h2 class="section-title">Contact Us</h2>
+  <p class="contact-sub">We’d love to hear from you</p>
+
+  <div class="contact-container">
+
+    <!-- LEFT INFO -->
+    <div class="contact-info">
+      <h3>Get In Touch</h3>
+      <p>Have questions or need a service? Reach out anytime.</p>
+
+      <div class="info-box">
+        <span>📞</span>
+        <p>+91 92201 94306</p>
+      </div>
+
+      <div class="info-box">
+        <span>📧</span>
+        <p>victorg201w@gmail.com</p>
+      </div>
+
+      <div class="info-box">
+        <span>📍</span>
+        <p>Noida, India</p>
+      </div>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <form method="POST" class="contact-form">
+
+      <input name="name" placeholder="Full Name" required>
+      <input name="email" placeholder="Email Address" required>
+      <textarea name="message" rows="4" placeholder="Your Message"></textarea>
+
+      <button type="submit">Send Message</button>
+
+    </form>
+
+  </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="booking-section">
+
+  <div class="booking-card">
+
+    <h2>Book Service</h2>
+
+    <p class="service-name">{{ service }}</p>
+    <p class="booking-price">Price: ₹{{ price }}</p>
+
+    <form method="POST" class="booking-form">
+
+      <input name="name" placeholder="Full Name" required>
+      <input name="phone" placeholder="Phone Number" required>
+      <input name="address" placeholder="Address" required>
+
+      <!-- Hidden price save -->
+      <input type="hidden" name="price" value="{{ price }}">
+
+      <button>Confirm Booking</button>
+
+    </form>
+
+  </div>
+
+</section>
+
+{% endblock %}

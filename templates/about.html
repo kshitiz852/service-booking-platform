@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="about-hero">
+  <h2>About Victor Ji Services</h2>
+  <p>Reliable Home & Digital Services at Your Doorstep</p>
+</section>
+
+<section class="about-main">
+
+  <div class="about-text">
+    <h3>Who We Are</h3>
+    <p>
+      Victor Ji is a growing service platform focused on providing fast,
+      reliable and affordable home services. Our mission is simple —
+      make professional help easily available for everyone.
+    </p>
+
+    <h3>What We Do</h3>
+    <p>
+      From AC repair and electrical work to plumbing, painting,
+      garden maintenance and pest control — we connect customers with
+      verified experts who deliver quality work.
+    </p>
+
+    <h3>Our Vision</h3>
+    <p>
+      We aim to become a trusted name in local services by offering
+      transparency, quick response time and customer satisfaction.
+    </p>
+  </div>
+
+  <div class="about-image">
+    <img src="{{ url_for('static', filename='images/about.jpg') }}">
+  </div>
+
+</section>
+
+{% endblock %}
