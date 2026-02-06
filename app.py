@@ -56,19 +56,6 @@ class Lead(db.Model):
 
 
 
-# @app.route('/book', methods=['POST'])
-# def book():
-#     new_booking = Booking(
-#         name=request.form['name'],
-#         phone=request.form['phone'],
-#         address=request.form['address'],
-#         service=request.form['service']
-#     )
-#     db.session.add(new_booking)
-#     db.session.commit()
-#     flash("Service Booked!")
-#     return redirect(url_for('services'))
-
 
 @app.route('/complete/<int:id>')
 def complete_booking(id):
@@ -91,9 +78,6 @@ def google_callback():
     session['role'] = "user"
 
     return redirect(url_for('home'))
-
-
-
 
 
 # ================= ADMIN AUTO CREATE =================
@@ -199,17 +183,6 @@ def signup():
         return redirect(url_for('login'))
 
     return render_template('signup.html')
-
-# ================= ADMIN PANEL =================
-# @app.route('/admin')
-# def admin():
-#     if 'user' not in session or session.get('role') != "admin":
-#         return redirect(url_for('home'))
-
-#     leads = Lead.query.all()
-#     bookings = Booking.query.all()
-
-#     return render_template('admin.html', leads=leads, bookings=bookings)
 
 @app.route('/admin')
 def admin():
